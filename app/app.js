@@ -1,12 +1,22 @@
-'use strict';
+(function(){
+	var dependencies = ["ngRoute","youtube-embed"];
 
-// Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+	angular
+		.module('App', dependencies)
+		.config(["$routeProvider",
+			function($routeProvider){
+				$routeProvider.otherwise({redirectTo:"/destaque"});	
+
+				$routeProvider.when("/destaque", { 
+					templateUrl: "views/destaque.html",
+					controller: "DestaqueController",
+					controllerAs:"vm"
+				});
+				
+				$routeProvider.when("/videos",{
+					templateUrl:"views/videos.html",
+					controller:"VideosController",
+					controllerAs:"vm" 
+				});
+		}]);
+})();
