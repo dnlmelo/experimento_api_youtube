@@ -1,0 +1,15 @@
+@mixin arrow(){
+	content: '';
+	width: 0;
+	height: 0;
+	position: absolute;
+}
+
+@mixin arrow_up($borderWidth, $color, $top, $right) {
+	@include arrow();
+	border-left: $borderWidth solid transparent;
+	border-right: $borderWidth solid transparent;
+	border-bottom: $borderWidth solid $color;
+	top: $top;
+	right: $right;
+}

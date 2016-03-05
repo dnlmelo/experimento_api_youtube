@@ -1,0 +1,52 @@
+.video-active{
+	height: 315px;
+	width: 100%;
+
+	>iframe{
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.box-obfuscade{
+	max-height: 158px;
+	
+	.textToHidden{
+		height: 60px;
+		overflow: hidden;
+	}
+
+	&:after{
+		content: '';
+		display: block;
+		width: 100%;
+		height: 70%;
+		position: absolute;
+		top: 43px;
+		right: 0;
+		background: linear-gradient(transparent, #fff);
+	}
+}
+
+.video-active-description{
+	margin-top: 30px;
+	position: relative;
+	transition: height .5s;
+	word-wrap: break-word;
+	h2{
+		display: inline-block;
+		max-width: 89%;
+	}
+
+	.glyphicon{
+		color: $icon-color-active;
+	}
+
+}
+
+.side-list{
+	padding: 15px;
+	max-height: 601px;
+	overflow: hidden;
+	position: relative;
+}

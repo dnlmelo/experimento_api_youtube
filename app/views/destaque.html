@@ -1,0 +1,46 @@
+<div class="container">
+	<div class="row">
+		<section class="col-md-6 col-md-offset-1 featured">
+			<h1>Vídeos em Destaque</h1>
+			<div class="video-active">
+				<youtube-video video-id="vm.videoActive.video_id" player-vars="vm.videoActive.playerVars"></youtube-video>
+			</div>
+			<div class="box-content video-active-description" ng-class="{'box-obfuscade': !vm.fullText}" ng-click="vm.fullText = !vm.fullText">
+				<h2>{{::vm.videoActive.snippet.title}}</h2>
+				<div class="pull-right meta-info">
+					<span class="glyphicon glyphicon-eye-open" data-toggle="tooltip" data-placement="top" title="{{vm.videoActive.statistics.viewCount}} views"></span>
+					<span class="glyphicon glyphicon-time" data-toggle="tooltip" data-placement="top" title="{{vm.videoActive.snippet.publishedAt}}"></span>
+				</div>
+				<p class="textToHidden">{{::vm.videoActive.snippet.description}}</p>
+			</div>
+		</section>
+
+		<aside class="col-md-4">
+			<h1>+ Vídeos</h1>
+			<div class="box-content side-list" id="side-list-thumb">
+				<ul class="clearfix">
+					<li class="item-list-thumb" ng-repeat="item in vm.list" ng-click="vm.playVideo(item.snippet.resourceId.videoId)">
+						<div class="box-thumb clearfix">
+							<div class="img-thumb pull-left">
+								<img ng-src="{{item.snippet.thumbnails.medium.url}}" alt="Imagem do vídeo">
+								<span class="video-time">{{::item.contentDetails.duration}}</span>
+							</div>
+							<h2 class="title-thumb">{{::item.snippet.titleEllipsis}}</h2>
+							<div class="meta-info">
+								<span class="glyphicon glyphicon-eye-open"></span> 
+								<span>{{::item.statistics.viewCount}}</span> views
+							</div>
+						</div>
+					</li>
+				</ul>
+				<buttom class="btn-load-more" ng-if="vm.hasNextPage && !vm.loadingMore" ng-click="vm.loadMore()"> carregar mais vídeos... </buttom>
+				<div ng-if="vm.loadingMore" class="loadingMore"><img src="../assets/images/loading.gif" alt=""></div>
+			</div>
+		</aside>
+	</div>
+</div>
+
+<script>
+	$('[data-toggle="tooltip"]').tooltip();
+	Ps.initialize(document.querySelector('#side-list-thumb'));
+</script>

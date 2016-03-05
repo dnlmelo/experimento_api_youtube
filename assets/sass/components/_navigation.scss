@@ -1,0 +1,72 @@
+.navbar.global-header{
+	padding: 10px 0;
+	border-radius: 0;
+	background: $primary-color;
+	color: #FFF;
+}
+
+.navbar-search{
+	display: inline-block;
+	position: relative;
+}
+
+.navbar-search-input{
+	width: 284px;
+	height: 32px;
+	border-radius: 4px;
+	padding: 5px;
+	border: 1px solid #FFF;
+	background-color: rgba(0, 0, 0, 0.2);
+	font-family: inherit;
+	color: #FFF;
+
+	+ .search-buttom{
+		cursor: pointer;
+		position: absolute;
+		right: 10px;
+	  position: absolute;
+	  top: 8px;
+	}
+}
+
+.dropdown.menu-header{
+	display: inline-block;
+	margin-left: 20px;
+	>a{
+		text-decoration: none;
+		color: #FFF;
+	}
+}
+
+.menu-header .dropdown-menu{
+	&:before{
+		@include arrow_up(10px, #fff, -10px, 23px);
+	}
+
+	top: 158%;
+	left: -195px;
+	padding: 10px;
+	width: 280px;
+
+	li{
+		font-size: 16px;	
+	}
+
+	a{
+		padding: 10px 15px;
+		font-weight: bold;
+		color: #797979;
+
+		&:hover{
+			border-radius: 4px;
+		}
+		
+		>.glyphicon{
+			color: $primary-color;
+			margin-right: 4px;
+			font-size: 24px;
+			top: 6px;
+		}
+	}
+
+}

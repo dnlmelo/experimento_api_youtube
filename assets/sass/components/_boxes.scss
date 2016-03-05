@@ -1,0 +1,56 @@
+.box-content{
+	border: 1px solid #c8c8c8;
+	padding: 23px;
+	@extend %shadow-bottom;
+
+}
+
+.item-list-thumb{
+	max-width: 315px;
+	float: left;
+	margin-bottom: 20px;
+}
+
+.title-thumb{
+	display: block;
+	float: right;
+	height: 67px;
+	width: 42%;
+	overflow: hidden;
+	font-size: 18px;
+	margin-top: 0;
+}
+
+.video-time{
+  padding: 0 4px;
+  font-weight: 500;
+  font-size: 11px;
+  background-color: #000;
+  color: #fff!important;
+  height: 14px;
+  opacity: .75;
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+}
+.meta-info{
+	display: inline-block;
+	color: #c8c8c8;
+}
+
+.img-thumb{
+	height: 95px;
+	width: 170px;
+	margin-right: 10px;
+	position: relative;
+	opacity: 0.5;
+	transition: opacity 0.5s;
+
+	&:hover, &:active{
+		opacity: 1;
+	}
+
+	>img{
+		width: 100%;
+	}
+}

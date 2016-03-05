@@ -1,0 +1,45 @@
+// OVERRIDE TOOLTIP STYLE FROM BOOTSTRAP
+.tooltip-inner{
+	max-width: 400px;
+	background-color: #fff;
+	border: 2px solid #e6e6e6;
+	color: $text-color;
+	padding: 10px;
+	white-space: pre;
+	font-weight: bold;
+}
+
+.tooltip.in{
+	opacity: 1;
+}
+
+.tooltip.top .tooltip-arrow {
+	border-top-color: #e6e6e6;
+}
+
+.modal-content{
+	border: none;
+}
+
+.modal-header{
+	border: none;
+}
+
+button.close{
+	color: #f50000;
+ 	text-shadow: 0 -1px 0 #f50000;
+  font-size: 17px;
+  opacity: 1;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  height: 19px;
+  width: 19px;
+  line-height: 1;
+	
+	&:hover{
+		color: #fff;
+		background-color: #f50000;
+		text-shadow: 0 -1px 0 #fff;
+		opacity: 1;
+	}
+}
